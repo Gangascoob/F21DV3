@@ -2,7 +2,7 @@
 Lab 3 for Data Visualisation and Analytics
 
 # This website will visually display COVID vaccination data.
-
+<pre>
 Requirements: 1. 3 Different D3 layouts within a single dashboard
               2. Automatic scaling of all axes in a single layout during data update
               3. Cross-layout brushing in which moussing over one data point in one chart highlights multiple 
@@ -15,3 +15,4 @@ Requirements: 1. 3 Different D3 layouts within a single dashboard
               8. Cross-layout brushing in which dragging a rectangle over several data points in one chart 
                  highlights multiple associated data points in another chart
               9. Clustering analysis
+</pre>
