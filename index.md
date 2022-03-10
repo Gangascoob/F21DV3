@@ -1,7 +1,7 @@
 # F21DVLab3
 Lab 3 for Data Visualisation and Analytics
 
-# This website will visually display COVID vaccination data.
+# This website will visually display COVID data and present a narrative of COVID's evolution in Western Europe.
 <pre>
 Requirements: 1. 3 Different D3 layouts within a single dashboard
               2. Automatic scaling of all axes in a single layout during data update
