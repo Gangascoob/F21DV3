@@ -1,0 +1,17 @@
+# F21DVLab3
+Lab 3 for Data Visualisation and Analytics
+
+# This website will visually display COVID vaccination data.
+
+Requirements: 1. 3 Different D3 layouts within a single dashboard
+              2. Automatic scaling of all axes in a single layout during data update
+              3. Cross-layout brushing in which moussing over one data point in one chart highlights multiple 
+                 associated data points in another chart
+              4. Bidirectional interaction between three charts
+              5. Faceted selection interaction between two layouts (in which mouseover or click in one layout results in 
+                 data being filtered in a second layout)
+              6. Map layout that has interaction with another layout
+              7. Scalar data on a map (e.g. circles of different sizes to indicate different weightage)
+              8. Cross-layout brushing in which dragging a rectangle over several data points in one chart 
+                 highlights multiple associated data points in another chart
+              9. Clustering analysis
