@@ -5,41 +5,8 @@
 		<title>Mercator projection</title>
 		<script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
 		<script src="//d3js.org/topojson.v1.min.js"></script>
-		<style type="text/css">
-
-
-			svg {
-				background-color: white;
-			}
-
-			h1 {
-				color: rgb(115, 115, 115);
-				font-size: 18px;
-				font-family: sans-serif;
-				font-weight: bold;
-				margin: 0;
-				padding-bottom: 10px;
-
-			}
-
-				#container {
-				width: 800px;
-				margin-left: auto;
-				margin-right: auto;
-				margin-top: 20px;
-				padding: 20px;
-				background-color: white;
-				box-shadow: 1px 1px 1px 2px rgb(217, 217, 217);
-			}
-
-			path:hover {
-				fill: rgba(8, 81, 156, 0.2);
-				cursor:pointer;
-			}
-
-
-
-		</style>
+		<link rel="stylesheet" href="style.css">
+		
 	</head>
 	<body>
 
