@@ -16,14 +16,14 @@
 								   .scale([ w/1.5 ]); // zoom, the smaller the value, the bigger the zoom
 			//Define path generator
 			var path = d3.geo.path()
-							 .projection(projection);
+				   .projection(projection);
 
 
 			//Create SVG
 			var svg = d3.select("#container")
-						.append("svg")
-						.attr("width", w)
-						.attr("height", h);
+				  .append("svg")
+				  .attr("width", w)
+				  .attr("height", h);
 
 			//Load in GeoJSON data
 			d3.json("https://raw.githubusercontent.com/markuslerner/travelscope/master/public/map/2.0.0/ne_50m_admin_0_countries_simplified.json", function(json) {
