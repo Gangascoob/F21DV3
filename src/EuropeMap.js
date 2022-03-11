@@ -52,8 +52,9 @@
 
 		<script type="text/javascript">
 
+			const selectedCountries = ["GBR", "ITA", "DEU", "NOR", "RUS", "LTU", "HUN"];
 
-
+				
 			//Width and height
 			var w = 400;
 			var h = 300;
@@ -87,7 +88,7 @@
 				   .attr("d", path)
 				   .attr("stroke", "rgba(8, 81, 156, 0.2)")
 				   .attr("fill", function(d){
-           			     if(d.properties.adm0_a3 == "ALB"){
+           			     if(selectedCountries.includes(d.properties.iso_a3)){
            	                     	return "rgba(150, 81, 156, 0.6)";
                                      }
                                      else return "rgba(8, 81, 156, 0.6)";
