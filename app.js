@@ -44,4 +44,4 @@ const selectedCountries = ["GBR", "ITA", "DEU", "NOR", "RUS", "LTU", "HUN"];
            				return "country" + d.properties.iso_a3;
            		            })
            			   .attr("class", "country");
-			}
+			})
