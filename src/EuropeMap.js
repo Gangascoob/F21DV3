@@ -61,11 +61,10 @@
 			//Define map projection
 
 
-			var projection = d3.geo.mercator() //utiliser une projection standard pour aplatir les pôles, voir D3 projection plugin
-								   .center([ 13, 52 ]) //comment centrer la carte, longitude, latitude
-								   .translate([ w/2, h/2 ]) // centrer l'image obtenue dans le svg
-								   .scale([ w/1.5 ]); // zoom, plus la valeur est petit plus le zoom est gros 
-
+			var projection = d3.geo.mercator() //use a standard projection to flatten the poles, see D3 projection plugin
+								   .center([ 13, 52 ]) //how to center the map, longitude, latitude
+								   .translate([ w/2, h/2 ]) // center the resulting image in the svg
+								   .scale([ w/1.5 ]); // zoom, the smaller the value, the bigger the zoom
 			//Define path generator
 			var path = d3.geo.path()
 							 .projection(projection);
@@ -87,7 +86,12 @@
 				   .append("path")
 				   .attr("d", path)
 				   .attr("stroke", "rgba(8, 81, 156, 0.2)")
-				   .attr("fill", "rgba(8, 81, 156, 0.6)");
+				   .attr("fill", function(d){
+           			     if(d.properties.adm0_a3 == "ALB"){
+           	                     	return "rgba(150, 81, 156, 0.6)";
+                                     }
+                                     else return "rgba(8, 81, 156, 0.6)";
+           			     });  
 		
 			});
 
