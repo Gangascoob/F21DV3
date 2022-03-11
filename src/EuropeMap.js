@@ -5,7 +5,7 @@
 		<title>Mercator projection</title>
 		<script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
 		<script src="//d3js.org/topojson.v1.min.js"></script>
-		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="../style.css">
 		
 	</head>
 	<body>
