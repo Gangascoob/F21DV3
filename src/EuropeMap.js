@@ -1,21 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<title>Mercator projection</title>
-		<script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
-		<script src="//d3js.org/topojson.v1.min.js"></script>
-		<link rel="stylesheet" href="../style.css">
-		
-	</head>
-	<body>
-
-
-	<div id="container">
-		<h1>World map centered on European countries</h1>
-
-	</div>
-		
 
 		<script type="text/javascript">
 
@@ -69,7 +51,3 @@
 					
 
 
-		
-		</script>
-	</body>
-</html>
