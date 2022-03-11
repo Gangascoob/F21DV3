@@ -1,5 +1,4 @@
 
-		<script type="text/javascript">
 
 			const selectedCountries = ["GBR", "ITA", "DEU", "NOR", "RUS", "LTU", "HUN"];
 
