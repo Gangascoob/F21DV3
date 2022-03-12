@@ -14,7 +14,7 @@ h1 {
 }
 
 #container {
-	width: 1900px;
+	width: 95%;
 	margin-left: 50px;
 	margin-right: auto;
 	margin-top: 20px;
@@ -25,7 +25,7 @@ h1 {
 }
 #child_div1{
 	display: inline-block;
-	width: 800px;
+	width: 45%;
 	margin-left: 50px;
 	margin-right: auto;
 	margin-top: 20px;
@@ -36,7 +36,7 @@ h1 {
 
 #child_div2{
 	display: inline-block;
-	width: 800px;
+	width: 45%;
 	margin-left: 900px;
 	margin-right: auto;
 	margin-top: 20px;
