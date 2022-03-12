@@ -42,7 +42,7 @@ const selectedCountries = ["GBR", "ITA", "DEU", "NOR", "RUS", "LTU", "HUN"];
            				return "country" + d.properties.iso_a3;
            		            })
            			   .attr("class", "country")
-				   .on("click", function(d){
+				   .on("click", function(d, i){
 					d3.select("#countryname" + d.properties.iso_a3).style("display", "block").text(d.properties.iso_a3);
 				});
 			})
