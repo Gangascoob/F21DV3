@@ -26,7 +26,7 @@ h1 {
 #child_div1{
 	display: inline-block;
 	vertical-align: top;
-	width: 45%;
+	width: 40%;
 	margin-left: 10px;
 	margin-right: auto;
 	margin-top: 20px;
@@ -39,7 +39,7 @@ h1 {
 #child_div2{
 	display: inline-block;
 	vertical-align: top;
-	width: 45%;
+	width: 40%;
 	
 	margin-right: auto;
 	margin-top: 20px;
