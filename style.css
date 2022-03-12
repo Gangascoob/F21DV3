@@ -17,6 +17,7 @@ h1 {
 	display: flex;
 	flex-wrap: wrap;
 	align-content: space-around;
+	gap: 10px 20px;
 	width: 95%;
 	margin-left: 25px;
 	margin-right: auto;
