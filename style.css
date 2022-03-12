@@ -34,6 +34,7 @@ h1 {
 	padding: 5px;
 	background-color: white;
 	box-shadow: 1px 1px 1px 2px rgb(217, 217, 217);
+	border: 3px black;
 	
 }
 
@@ -47,6 +48,7 @@ h1 {
 	padding: 5px;
 	background-color: white;
 	box-shadow: 1px 1px 1px 2px rgb(217, 217, 217);
+	border: 3px black;
 	
 }	
 
