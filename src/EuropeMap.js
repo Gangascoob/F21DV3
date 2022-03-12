@@ -47,7 +47,7 @@ const selectedCountries = ["GBR", "ITA", "DEU", "NOR", "RUS", "LTU", "HUN"];
 					d3.select("#countrypopulation").style("display", "block").text("Population: " + d.properties.pop_est);
 					
 					if(d.properties.lastcensus == "-99"){
-						d3.select(d3.select("#countrycensus").style("display", "block").text("Census data unavailable");
+						d3.select("#countrycensus").style("display", "block").text("Census data unavailable");
 					}
 					else {		  
 					d3.select("#countrycensus").style("display", "block").text("Census data from:" + d.properties.lastcensus);
