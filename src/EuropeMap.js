@@ -41,5 +41,8 @@ const selectedCountries = ["GBR", "ITA", "DEU", "NOR", "RUS", "LTU", "HUN"];
 			           .attr("id", function(d, i){
            				return "country" + d.properties.iso_a3;
            		            })
-           			   .attr("class", "country");
+           			   .attr("class", "country")
+				   .on("mouseover", function(d){
+					d3.select("#countryname" + d.properties.iso_a3).style("display", "block");
+				});
 			})
