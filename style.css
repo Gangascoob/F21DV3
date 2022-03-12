@@ -16,7 +16,7 @@ h1 {
 #container {
 	display: flex;
 	flex-wrap: wrap;
-	align-content: space-around;
+	align-content: space-evenly;
 	gap: 10px 20px;
 	width: 95%;
 	margin-left: 25px;
