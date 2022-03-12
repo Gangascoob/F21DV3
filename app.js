@@ -19,7 +19,7 @@ const selectedCountries = ["GBR", "ITA", "DEU", "NOR", "RUS", "LTU", "HUN"];
 
 
 			//Create SVG
-			var svg = d3.select("#container")
+			var svg = d3.select("#child_div1")
 				  .append("svg")
 				  .attr("width", w)
 				  .attr("height", h);
