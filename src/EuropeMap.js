@@ -45,7 +45,13 @@ const selectedCountries = ["GBR", "ITA", "DEU", "NOR", "RUS", "LTU", "HUN"];
 				   .on("click", function(d, i){
 					d3.select("#countryname").style("display", "block").text(d.properties.name);
 					d3.select("#countrypopulation").style("display", "block").text("Population: " + d.properties.pop_est);
+					
+					if(d.properties.lastcensus == "-99"){
+						d3.select(d3.select("#countrycensus").style("display", "block").text("Census data unavailable");
+					}
+					else {		  
 					d3.select("#countrycensus").style("display", "block").text("Census data from:" + d.properties.lastcensus);
+					};
 					d3.select("#countryincome").style("display", "block").text("Income bracket: " + d.properties.income_grp);
 					d3.select("#countryeconomy").style("display", "block").text("Economy: " + d.properties.economy);
 				});
