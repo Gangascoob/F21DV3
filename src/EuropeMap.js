@@ -43,6 +43,6 @@ const selectedCountries = ["GBR", "ITA", "DEU", "NOR", "RUS", "LTU", "HUN"];
            		            })
            			   .attr("class", "country")
 				   .on("mouseover", function(d){
-					d3.select("#countryname" + d.properties.iso_a3).style("display", "block");
+					d3.select("#countryname" + d.properties.iso_a3).style("display", "block").text(d.properties.iso_a3);
 				});
 			})
