@@ -3,8 +3,7 @@ const selectedCountries = ["GBR", "ITA", "DEU", "NOR", "RUS", "LTU", "HUN"];
 
 				
 			//Width and height
-			var w = 500;
-			var h = 330;
+			
 
 			//Define map projection
 
@@ -21,8 +20,8 @@ const selectedCountries = ["GBR", "ITA", "DEU", "NOR", "RUS", "LTU", "HUN"];
 			//Create SVG
 			var svg = d3.select("#child_div1")
 				  .append("svg")
-				  .attr("width", w)
-				  .attr("height", h);
+				  .attr("width", 100%)
+				  .attr("height", 75%);
 
 			//Load in GeoJSON data
 			d3.json("https://raw.githubusercontent.com/markuslerner/travelscope/master/public/map/2.0.0/ne_50m_admin_0_countries_simplified.json", function(json) {
