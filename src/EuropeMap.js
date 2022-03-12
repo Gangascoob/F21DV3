@@ -1,29 +1,26 @@
-
-
-			const selectedCountries = ["GBR", "ITA", "DEU", "NOR", "RUS", "LTU", "HUN"];
+onst selectedCountries = ["GBR", "ITA", "DEU", "NOR", "RUS", "LTU", "HUN"];
 
 				
 			//Width and height
-			var w = 400;
-			var h = 300;
+			
 
 			//Define map projection
 
 
 			var projection = d3.geo.mercator() //use a standard projection to flatten the poles, see D3 projection plugin
-								   .center([ 13, 52 ]) //how to center the map, longitude, latitude
-								   .translate([ w/2, h/2 ]) // center the resulting image in the svg
-								   .scale([ w/1.5 ]); // zoom, the smaller the value, the bigger the zoom
+								   .center([ 20, 45 ]) //how to center the map, longitude, latitude
+								 //  .translate([50%, 50%]) center the resulting image in the svg
+								   .scale(300); // bigger value, bigger zoom
 			//Define path generator
 			var path = d3.geo.path()
 				   .projection(projection);
 
 
 			//Create SVG
-			var svg = d3.select("#container")
+			var svg = d3.select("#child_div1")
 				  .append("svg")
-				  .attr("width", w)
-				  .attr("height", h);
+				  .attr("width", "100%")
+				  .attr("height", "90%");
 
 			//Load in GeoJSON data
 			d3.json("https://raw.githubusercontent.com/markuslerner/travelscope/master/public/map/2.0.0/ne_50m_admin_0_countries_simplified.json", function(json) {
@@ -45,8 +42,4 @@
            				return "country" + d.properties.iso_a3;
            		            })
            			   .attr("class", "country");
-           
-		
-					
-
-
+			})
