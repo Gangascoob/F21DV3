@@ -3,8 +3,8 @@ const selectedCountries = ["GBR", "ITA", "DEU", "NOR", "RUS", "LTU", "HUN"];
 
 				
 			//Width and height
-			var w = 45%;
-			var h = 600;
+			var w = 400;
+			var h = 300;
 
 			//Define map projection
 
