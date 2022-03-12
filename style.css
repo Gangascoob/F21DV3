@@ -15,6 +15,7 @@ h1 {
 
 #container {
 	display: flex;
+	flex-wrap: wrap;
 	width: 95%;
 	margin-left: 25px;
 	margin-right: auto;
@@ -51,6 +52,33 @@ h1 {
 	border: 3px black;
 	
 }	
+
+#child_div3{
+	flex: 1;
+	vertical-align: top;
+	width: 40%;
+	margin-left 50%;
+	margin-right: 10px;
+	margin-top: 20px;
+	padding: 5px;
+	background-color: white;
+	box-shadow: 1px 1px 1px 2px rgb(217, 217, 217);
+	border: 3px black;
+}
+
+#child_div4{
+	flex: 1;
+	vertical-align: top;
+	width: 40%;
+	margin-left 50%;
+	margin-right: 10px;
+	margin-top: 20px;
+	padding: 5px;
+	background-color: white;
+	box-shadow: 1px 1px 1px 2px rgb(217, 217, 217);
+	border: 3px black;
+	
+}
 
 #containerright {
 	display: inline-block;
