@@ -24,6 +24,7 @@ h1 {
 	
 }
 #child_div1{
+	display: inline-block;
 	width: 800px;
 	margin-left: 50px;
 	margin-right: auto;
@@ -34,6 +35,7 @@ h1 {
 }
 
 #child_div2{
+	display: inline-block;
 	width: 800px;
 	margin-left: 900px;
 	margin-right: auto;
