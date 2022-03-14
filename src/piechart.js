@@ -1,3 +1,4 @@
+function piechart(){
 var data = [3, 4, 8, 12, 5, 13, 34, 20, 29,8,5,6]; //more data added
  
 const xSize  = 400;   const ySize  = 400; 
@@ -53,3 +54,4 @@ var arctext = svg.selectAll("arc")
       })
       .style("text-anchor", "middle")
       .style("font-size", 20);
+};
