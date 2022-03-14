@@ -10,7 +10,7 @@ const selectedCountries = ["GBR", "ITA", "DEU", "NOR", "RUS", "LTU", "HUN", "MDA
 			var projection = d3.geoMercator() //use a standard projection to flatten the poles, see D3 projection plugin
 								   .center([ 20, 45 ]) //how to center the map, longitude, latitude
 								 //  .translate([50%, 50%]) center the resulting image in the svg
-								   .scale(300); // bigger value, bigger zoom
+								   .scale(100); // bigger value, bigger zoom
 			//Define path generator
 			var path = d3.geoPath()
 				   .projection(projection);
