@@ -54,5 +54,6 @@ const selectedCountries = ["GBR", "ITA", "DEU", "NOR", "RUS", "LTU", "HUN", "MDA
 					};
 					d3.select("#countryincome").style("display", "block").text("Income bracket: " + d.properties.income_grp);
 					d3.select("#countryeconomy").style("display", "block").text("Economy: " + d.properties.economy);
+					piechart();
 				});
 			})
