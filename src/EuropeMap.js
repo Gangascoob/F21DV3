@@ -56,4 +56,4 @@ const selectedCountries = ["GBR", "ITA", "DEU", "NOR", "RUS", "LTU", "HUN", "MDA
 					d3.select("#countryeconomy").style("display", "block").text("Economy: " + d.properties.economy);
 					
 				});
-			})
+			});
