@@ -44,4 +44,4 @@ const selectedCountries = ["GBR", "ITA", "DEU", "NOR", "RUS", "LTU", "HUN", "MDA
            			   .attr("class", "country");
 				   
 				});
-			});
+			
