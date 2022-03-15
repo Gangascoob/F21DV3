@@ -46,7 +46,7 @@ const selectedCountries = ["GBR", "ITA", "DEU", "NOR", "RUS", "LTU", "HUN"];
            })
            .attr("class", "country")
            .on("click", function(d, i){
-					d3.select("#countryname").style("display", "block").text(d.properties.name);
+					d3.select("#countryname").text(d.properties.name);
 					d3.select("#countrypopulation").style("display", "block").text("Population: " + d.properties.pop_est);
 					
 					if(d.properties.lastcensus == "-99"){
