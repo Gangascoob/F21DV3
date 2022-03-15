@@ -37,11 +37,8 @@ const selectedCountries = ["GBR", "ITA", "DEU", "NOR", "RUS", "LTU", "HUN", "MDA
            	                     	return "rgba(150, 81, 156, 0.6)";
                                      }
                                      else return "rgba(8, 81, 156, 0.6)";
-				    })
-			           .attr("id", function(d, i){
-           				return "country" + d.properties.iso_a3;
-           		            })
-           			   .attr("class", "country");
+				    });
+			           
 				   
 				});
 			
