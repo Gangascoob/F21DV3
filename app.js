@@ -27,14 +27,12 @@ const selectedCountries = ["GBR", "ITA", "DEU", "NOR", "RUS", "LTU", "HUN"];
 			d3.json("https://raw.githubusercontent.com/markuslerner/travelscope/master/public/map/2.0.0/ne_50m_admin_0_countries_simplified.json").then (function(json) {
 				
 				//Bind data and create one path per GeoJSON feature
-				svg.selectAll("path")
-				   .data(json.features)
-				   .enter()
-				   .append("path")
-				   .attr("d", path)
-				   .attr("stroke", "rgba(8, 81, 156, 0.2)")
-				   //.attr("fill", "rgba(8, 81, 156, 0.6)");
-          
+	svg.selectAll("path")
+	   .data(json.features)
+	   .enter()
+	   .append("path")
+	   .attr("d", path)
+	   .attr("stroke", "rgba(8, 81, 156, 0.2)")
            .attr("fill", function(d){
            if(selectedCountries.includes(d.properties.iso_a3)){
            return "rgba(255, 81, 156, 0.6)";
@@ -46,8 +44,8 @@ const selectedCountries = ["GBR", "ITA", "DEU", "NOR", "RUS", "LTU", "HUN"];
            })
            .attr("class", "country")
            .on("click", function(d, i){
-					var name = d.properties.name;
-					d3.select("#countryname").style("display", "block").text(name);
+					
+					d3.select("#countryname").style("display", "block").text(d.properties.iso_a3);
 					d3.select("#countrypopulation").style("display", "block").text("Population: " + d.pop_est);
 					
 					if(d.lastcensus == "-99"){
