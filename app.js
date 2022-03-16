@@ -24,17 +24,18 @@ const selectedCountries = ["GBR", "ITA", "DEU", "NOR", "RUS", "LTU", "HUN"];
 						.attr("height", "90%");
 
 			//Load in GeoJSON data
-		data =	d3.json("https://raw.githubusercontent.com/markuslerner/travelscope/master/public/map/2.0.0/ne_50m_admin_0_countries_simplified.json").then (function(json) {
+		d3.json("https://raw.githubusercontent.com/markuslerner/travelscope/master/public/map/2.0.0/ne_50m_admin_0_countries_simplified.json").then (function(json) {
 				
-	var name = data.features.properties.name;
+/*	var name = data.features.properties.name;
 	var population = data.features.properties.pop_est;
 	var lastcensus = data.features.properties.lastcensus;
 	var income = data.features.properties.income_grp;
 	var economy = data.features.properties.economy;
+	*/
 				
 	//Bind data and create one path per GeoJSON feature
 	svg.selectAll("path")
-	   .data(data)
+	   .data(json.features)
 	   .enter()
 	   .append("path")
 	   .attr("d", path)
@@ -51,17 +52,17 @@ const selectedCountries = ["GBR", "ITA", "DEU", "NOR", "RUS", "LTU", "HUN"];
            .attr("class", "country")
            .on("mouseover", function(d){
 					
-					d3.select("#countryname").style("display", "block").text(name);
-					d3.select("#countrypopulation").style("display", "block").text("Population: " + population);
+					d3.select("#countryname").style("display", "block").text(d.properties.name);
+					d3.select("#countrypopulation").style("display", "block").text("Population: " + d.properties.pop_est);
 					
-					if(lastcensus == "-99"){
+					if(d.properties.lastcensus == "-99"){
 						d3.select("#countrycensus").style("display", "block").text("Census data unavailable");
 					}
 					else {		  
-					d3.select("#countrycensus").style("display", "block").text("Census data from:" + lastcensus);
+					d3.select("#countrycensus").style("display", "block").text("Census data from:" + d.properties.lastcensus);
 					};
-					d3.select("#countryincome").style("display", "block").text("Income bracket: " + income);
-					d3.select("#countryeconomy").style("display", "block").text("Economy: " + economy); 
+					d3.select("#countryincome").style("display", "block").text("Income bracket: " + d.properties.income_grp);
+					d3.select("#countryeconomy").style("display", "block").text("Economy: " + d.properties.economy); 
 	});
 					
              
