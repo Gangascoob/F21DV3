@@ -19,7 +19,7 @@ var data = []; //more data added
 
 var data1 = d3.csv("https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/vaccinations/vaccinations-by-age-group.csv").then (function(data1){
 
-if(name == data1.location && data1.date == "2021-05-10"){
+if(name == data1.location && data1.date == "2021-07-23"){
 	data.push(data1.people_vaccinated_per_hundred);
 	console.log("yes");
 }
