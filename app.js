@@ -47,7 +47,8 @@ const selectedCountries = ["GBR", "ITA", "DEU", "NOR", "RUS", "LTU", "HUN"];
            else return "rgba(8, 81, 156, 0.6)";
            })
            .attr("id", function(d, i){
-	   var name = d.properties.name;	
+	   var name = d.properties.name;
+	   console.log(name);
            return "country" + d.properties.iso_a3;
            })
            .attr("class", "country")
