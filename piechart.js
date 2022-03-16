@@ -17,13 +17,13 @@ function piechart(name){
 	
 var data = []; //more data added
 
-var data1 = d3.csv("https://github.com/owid/covid-19-data/blob/master/public/data/vaccinations/vaccinations-by-age-group.csv").then function(data1){
+var data1 = d3.csv("https://github.com/owid/covid-19-data/blob/master/public/data/vaccinations/vaccinations-by-age-group.csv").then (function(data1){
 
 if(name == data1.location && data1.date == "2021-05-10"){
 	data.push(data1.people_vaccinated_per_hundred);
 }
 
-}
+});
  
 // Generate the pie 
 var pie = d3.pie(); 
