@@ -24,7 +24,8 @@ if(name == data1.location && data1.date == "2021-07-23"){
 	console.log("yes");
 }
 	else{
-		console.log("no");}
+		console.log(name);
+		console.log(data1.location);}
 
 });
  
