@@ -47,12 +47,13 @@ const selectedCountries = ["GBR", "ITA", "DEU", "NOR", "RUS", "LTU", "HUN"];
            else return "rgba(8, 81, 156, 0.6)";
            })
            .attr("id", function(d, i){
+	   var name = d.properties.name;	
            return "country" + d.properties.iso_a3;
            })
            .attr("class", "country")
            .on("click", function(d){
 					
-					d3.select("#countryname").style("display", "block").text(d.properties.name);
+					d3.select("#countryname").style("display", "block").text(name);
 					d3.select("#countrypopulation").style("display", "block").text("Population: " + d.properties.pop_est);
 					
 					if(d.properties.lastcensus == "-99"){
