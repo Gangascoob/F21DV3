@@ -1,11 +1,8 @@
-function piechart(){
-var data = [3, 4, 8, 12, 5, 13, 34, 20, 29,8,5,6]; //more data added
- 
 const xSize  = 400;   const ySize  = 400; 
 const margin = 40; 
 const xMax   = xSize - margin*2; 
 const yMax   = ySize - margin*2; 
- 
+
 // Append SVG Object to the Page 
 const svg = d3.select("#child_div3") 
               .append("svg") 
@@ -13,10 +10,15 @@ const svg = d3.select("#child_div3")
               .attr('height', ySize  ) 
               .append("g") 
               .attr("transform","translate(" + xSize/2 + "," + ySize/2 + ")"); 
- 
 const radius = Math.min(xSize, ySize) / 2; 
- 
 var color = d3.scaleOrdinal(['#4daf4a','#377eb8','#ff7f00','#984ea3','#e41a1c']); 
+
+
+
+function piechart(){
+	
+var data = [3, 4, 8, 12, 5, 13, 34, 20, 29,8,5,6]; //more data added
+
  
 // Generate the pie 
 var pie = d3.pie(); 
