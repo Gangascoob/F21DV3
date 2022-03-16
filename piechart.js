@@ -1,11 +1,11 @@
-const xSizepie  = 400;   const ySizepie  = 400; 
+const xSizepie  = 200;   const ySizepie  = 200; 
 
 
 // Append SVG Object to the Page 
 const svgpie = d3.select("#child_div3") 
               .append("svg") 
-              .attr('width',  "40%"  ) 
-              .attr('height', "60%"  ) 
+              .attr('width',  "100%"  ) 
+              .attr('height', "90%"  ) 
               .append("g") 
               .attr("transform","translate(" + xSizepie/2 + "," + ySizepie/2 + ")"); 
 const radius = Math.min(xSizepie, ySizepie) / 2; 
