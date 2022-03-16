@@ -33,23 +33,15 @@ d3.select("#countryeconomy").style("display", "block").text("Economy: " + d.prop
 	
 	
 }
-
-
-			//Create SVG
-			var svg = d3.select("#child_div1")
-						.append("svg")
-						.attr("width", "100%")
-						.attr("height", "90%");
+//Create SVG
+var svg = d3.select("#child_div1")
+	.append("svg")
+	.attr("width", "100%")
+	.attr("height", "90%");
 
 			//Load in GeoJSON data
-		d3.json("https://raw.githubusercontent.com/markuslerner/travelscope/master/public/map/2.0.0/ne_50m_admin_0_countries_simplified.json").then (function(json) {
-				
-	var name = json.features.properties.name;
-	var population = json.features.properties.pop_est;
-	var lastcensus = json.features.properties.lastcensus;
-	var income = json.features.properties.income_grp;
-	var economy = json.features.properties.economy;
-	
+d3.json("https://raw.githubusercontent.com/markuslerner/travelscope/master/public/map/2.0.0/ne_50m_admin_0_countries_simplified.json").then (function(json) {
+
 	console.log(income_grp);			
 	//Bind data and create one path per GeoJSON feature
 	svg.selectAll("path")
@@ -67,16 +59,8 @@ d3.select("#countryeconomy").style("display", "block").text("Economy: " + d.prop
            .attr("id", function(d, i){
            return "country" + d.properties.iso_a3;
            })
-           .attr("class", "country");
-			
-	svg.selectAll("path")
-	   .data(json.features)
-	   .enter()
-	   .attr(
-			
-			
-           .on("click", mouseClick);
-					
-             
+           .attr("class", "country")
+	   .on("click", mouseClick);
+
 		
 			});
