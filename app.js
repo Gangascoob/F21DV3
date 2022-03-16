@@ -20,7 +20,7 @@ const selectedCountries = ["GBR", "ITA", "DEU", "NOR", "RUS", "LTU", "HUN"];
 function mouseClick(e, d){
 	
 d3.select("#countryname").text(d.properties.name);
-d3.select("#countrypopulation").text("Population: " + d.properties.population);
+d3.select("#countrypopulation").text("Population: " + d.properties.pop_est);
 					
 if(d.properties.lastcensus == "-99"){
 	d3.select("#countrycensus").style("display", "block").text("Census data unavailable");
