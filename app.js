@@ -8,9 +8,9 @@ const selectedCountries = ["GBR", "ITA", "DEU", "NOR", "RUS", "LTU", "HUN"];
 
 
 			var projection = d3.geoMercator() //utiliser une projection standard pour aplatir les pôles, voir D3 projection plugin
-								   .center([ 15, 55 ]) //comment centrer la carte, longitude, latitude
-								   .translate([ w/2, h/2 ]) // centrer l'image obtenue dans le svg
-								   .scale([ w/1.5 ]); // zoom, plus la valeur est petit plus le zoom est gros 
+								   .center([ 20, 25 ]) //comment centrer la carte, longitude, latitude
+								   .translate([ 0, 0 ]) // centrer l'image obtenue dans le svg
+								   .scale([ 100]); // zoom, plus la valeur est petit plus le zoom est gros 
 
 			//Define path generator
 			var path = d3.geoPath()
