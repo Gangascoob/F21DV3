@@ -21,6 +21,7 @@ var data1 = d3.csv("https://raw.githubusercontent.com/owid/covid-19-data/master/
 
 if(name == data1.location && data1.date == "2021-05-10"){
 	data.push(data1.people_vaccinated_per_hundred);
+	console.log("yes");
 }
 
 });
