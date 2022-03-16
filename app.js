@@ -42,7 +42,7 @@ var svg = d3.select("#child_div1")
 			//Load in GeoJSON data
 d3.json("https://raw.githubusercontent.com/markuslerner/travelscope/master/public/map/2.0.0/ne_50m_admin_0_countries_simplified.json").then (function(json) {
 
-	console.log(income_grp);			
+				
 	//Bind data and create one path per GeoJSON feature
 	svg.selectAll("path")
 	   .data(json.features)
