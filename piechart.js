@@ -13,10 +13,17 @@ var color = d3.scaleOrdinal(['#4daf4a','#377eb8','#ff7f00','#984ea3','#e41a1c'])
 
 
 
-function piechart(){
+function piechart(name){
 	
-var data = [3, 4, 8, 12, 5, 13, 34, 20, 29,8,5,6]; //more data added
+var data = []; //more data added
 
+var data1 = d3.csv("https://github.com/owid/covid-19-data/blob/master/public/data/vaccinations/vaccinations-by-age-group.csv").then function(data1){
+
+if(name == data1.location && data1.date == "2021-05-10"){
+	data.push(data1.people_vaccinated_per_hundred);
+}
+
+}
  
 // Generate the pie 
 var pie = d3.pie(); 
