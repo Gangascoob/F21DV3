@@ -24,17 +24,17 @@ const selectedCountries = ["GBR", "ITA", "DEU", "NOR", "RUS", "LTU", "HUN"];
 						.attr("height", "90%");
 
 			//Load in GeoJSON data
-			d3.json("https://raw.githubusercontent.com/markuslerner/travelscope/master/public/map/2.0.0/ne_50m_admin_0_countries_simplified.json").then (function(json) {
+		data =	d3.json("https://raw.githubusercontent.com/markuslerner/travelscope/master/public/map/2.0.0/ne_50m_admin_0_countries_simplified.json").then (function(json) {
 				
-	var name = json.features.properties.name;
-	var population = json.features.properties.pop_est;
-	var lastcensus = json.features.properties.lastcensus;
-	var income = json.features.properties.income_grp;
-	var economy = json.features.properties.economy;
+	var name = data.features.properties.name;
+	var population = data.features.properties.pop_est;
+	var lastcensus = data.features.properties.lastcensus;
+	var income = data.features.properties.income_grp;
+	var economy = data.features.properties.economy;
 				
 	//Bind data and create one path per GeoJSON feature
 	svg.selectAll("path")
-	   .data(json.features)
+	   .data(data)
 	   .enter()
 	   .append("path")
 	   .attr("d", path)
