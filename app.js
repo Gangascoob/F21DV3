@@ -26,7 +26,13 @@ const selectedCountries = ["GBR", "ITA", "DEU", "NOR", "RUS", "LTU", "HUN"];
 			//Load in GeoJSON data
 			d3.json("https://raw.githubusercontent.com/markuslerner/travelscope/master/public/map/2.0.0/ne_50m_admin_0_countries_simplified.json").then (function(json) {
 				
-				//Bind data and create one path per GeoJSON feature
+	var name = json.features.properties.name;
+	var population = json.features.properties.pop_est;
+	var lastcensus = json.features.properties.lastcensus;
+	var income = json.features.properties.income_grp;
+	var economy = json.features.properties.economy;
+				
+	//Bind data and create one path per GeoJSON feature
 	svg.selectAll("path")
 	   .data(json.features)
 	   .enter()
@@ -45,18 +51,19 @@ const selectedCountries = ["GBR", "ITA", "DEU", "NOR", "RUS", "LTU", "HUN"];
            .attr("class", "country")
            .on("mouseover", function(d){
 					
-					d3.select("#countryname").text(d.properties.iso_a3).style("display", "block");
-					d3.select("#countrypopulation").style("display", "block").text("Population: " + d.pop_est);
+					d3.select("#countryname").style("display", "block").text(name);
+					d3.select("#countrypopulation").style("display", "block").text("Population: " + population);
 					
-					if(d.lastcensus == "-99"){
+					if(lastcensus == "-99"){
 						d3.select("#countrycensus").style("display", "block").text("Census data unavailable");
 					}
 					else {		  
-					d3.select("#countrycensus").style("display", "block").text("Census data from:" + d.lastcensus);
+					d3.select("#countrycensus").style("display", "block").text("Census data from:" + lastcensus);
 					};
-					d3.select("#countryincome").style("display", "block").text("Income bracket: " + d.income_grp);
-					d3.select("#countryeconomy").style("display", "block").text("Economy: " + d.economy); })
+					d3.select("#countryincome").style("display", "block").text("Income bracket: " + income);
+					d3.select("#countryeconomy").style("display", "block").text("Economy: " + economy); 
+	});
 					
-           ;  
+             
 		
 			});
