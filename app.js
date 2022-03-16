@@ -26,13 +26,13 @@ const selectedCountries = ["GBR", "ITA", "DEU", "NOR", "RUS", "LTU", "HUN"];
 			//Load in GeoJSON data
 		d3.json("https://raw.githubusercontent.com/markuslerner/travelscope/master/public/map/2.0.0/ne_50m_admin_0_countries_simplified.json").then (function(json) {
 				
-/*	var name = data.features.properties.name;
-	var population = data.features.properties.pop_est;
-	var lastcensus = data.features.properties.lastcensus;
-	var income = data.features.properties.income_grp;
-	var economy = data.features.properties.economy;
-	*/
-				
+	var name = json.features.properties.name;
+	var population = json.features.properties.pop_est;
+	var lastcensus = json.features.properties.lastcensus;
+	var income = json.features.properties.income_grp;
+	var economy = json.features.properties.economy;
+	
+	console.log(income_grp);			
 	//Bind data and create one path per GeoJSON feature
 	svg.selectAll("path")
 	   .data(json.features)
@@ -40,23 +40,17 @@ const selectedCountries = ["GBR", "ITA", "DEU", "NOR", "RUS", "LTU", "HUN"];
 	   .append("path")
 	   .attr("d", path)
 	   .attr("stroke", "rgba(8, 81, 156, 0.2)")
-           .attr("fill", function(d){
+           .attr("fill", function(d, i){
            if(selectedCountries.includes(d.properties.iso_a3)){
            return "rgba(255, 81, 156, 0.6)";
            }
            else return "rgba(8, 81, 156, 0.6)";
            })
            .attr("id", function(d, i){
-	   var name = d.properties.name;
-	   var population = d.properties.pop_est;
-	   var lastcensus = d.properties.lastcensus;
-	   var income = d.properties.income_grp;
-	   var economy = d.properties.economy;	
-	   console.log(name);
            return "country" + d.properties.iso_a3;
            })
            .attr("class", "country")
-           .on("click", function(d){
+           .on("click", function(d, i){
 					
 					d3.select("#countryname").style("display", "block").text(name);
 					d3.select("#countrypopulation").style("display", "block").text("Population: " + population);
