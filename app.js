@@ -17,6 +17,24 @@ const selectedCountries = ["GBR", "ITA", "DEU", "NOR", "RUS", "LTU", "HUN"];
 					.projection(projection);
 
 
+function mouseClick(e, d){
+	
+d3.select("#countryname").text(d.properties.name);
+d3.select("#countrypopulation").text("Population: " + d.properties.population);
+					
+if(d.properties.lastcensus == "-99"){
+	d3.select("#countrycensus").style("display", "block").text("Census data unavailable");
+}
+else {		  
+	d3.select("#countrycensus").style("display", "block").text("Census data from:" + d.properties.lastcensus);
+};
+d3.select("#countryincome").style("display", "block").text("Income bracket: " + d.properties.income_grp);
+d3.select("#countryeconomy").style("display", "block").text("Economy: " + d.properties.economy); 
+	
+	
+}
+
+
 			//Create SVG
 			var svg = d3.select("#child_div1")
 						.append("svg")
@@ -49,21 +67,15 @@ const selectedCountries = ["GBR", "ITA", "DEU", "NOR", "RUS", "LTU", "HUN"];
            .attr("id", function(d, i){
            return "country" + d.properties.iso_a3;
            })
-           .attr("class", "country")
-           .on("click", function(d, i){
-					
-					d3.select("#countryname").style("display", "block").text(name);
-					d3.select("#countrypopulation").style("display", "block").text("Population: " + population);
-					
-					if(lastcensus == "-99"){
-						d3.select("#countrycensus").style("display", "block").text("Census data unavailable");
-					}
-					else {		  
-					d3.select("#countrycensus").style("display", "block").text("Census data from:" + lastcensus);
-					};
-					d3.select("#countryincome").style("display", "block").text("Income bracket: " + income);
-					d3.select("#countryeconomy").style("display", "block").text("Economy: " + economy); 
-	});
+           .attr("class", "country");
+			
+	svg.selectAll("path")
+	   .data(json.features)
+	   .enter()
+	   .attr(
+			
+			
+           .on("click", mouseClick);
 					
              
 		
