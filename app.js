@@ -50,7 +50,7 @@ const selectedCountries = ["GBR", "ITA", "DEU", "NOR", "RUS", "LTU", "HUN"];
            return "country" + d.properties.iso_a3;
            })
            .attr("class", "country")
-           .on("mouseover", function(d){
+           .on("click", function(d){
 					
 					d3.select("#countryname").style("display", "block").text(d.properties.name);
 					d3.select("#countrypopulation").style("display", "block").text("Population: " + d.properties.pop_est);
