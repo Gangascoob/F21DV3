@@ -1,16 +1,14 @@
-const xSize  = 400;   const ySize  = 400; 
-const margin = 40; 
-const xMax   = xSize - margin*2; 
-const yMax   = ySize - margin*2; 
+const xSizepie  = 400;   const ySizepie  = 400; 
+
 
 // Append SVG Object to the Page 
-const svg = d3.select("#child_div3") 
+const svgpie = d3.select("#child_div3") 
               .append("svg") 
-              .attr('width',  xSize  ) 
-              .attr('height', ySize  ) 
+              .attr('width',  xSizepie  ) 
+              .attr('height', ySizepie  ) 
               .append("g") 
-              .attr("transform","translate(" + xSize/2 + "," + ySize/2 + ")"); 
-const radius = Math.min(xSize, ySize) / 2; 
+              .attr("transform","translate(" + xSizepie/2 + "," + ySizepie/2 + ")"); 
+const radius = Math.min(xSizepie, ySizepie) / 2; 
 var color = d3.scaleOrdinal(['#4daf4a','#377eb8','#ff7f00','#984ea3','#e41a1c']); 
 
 
@@ -29,7 +27,7 @@ var arc = d3.arc()
       .outerRadius(radius); 
  
 //Generate groups 
-var arcs = svg.selectAll("arc") 
+var arcs = svgpie.selectAll("arc") 
       .data(pie(data)) 
       .enter() 
       .append("g") 
@@ -44,7 +42,7 @@ arcs.append("path")
 
 
 //appends text to each arc of the chart and returns value. Centroid function calculates best position in the arc for text.
-var arctext = svg.selectAll("arc")
+var arctext = svgpie.selectAll("arc")
 	.data(pie(data))
       .enter()
       .append("text")
