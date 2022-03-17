@@ -8,11 +8,13 @@ var day = 25;
 var month = 07;
 var year = 2021;
 
-dayformatted = ("0" + day).slice(-2);
-monthformatted = ("0" + month).slice(-2);
+var dayformatted = ("0" + day).slice(-2);
+var monthformatted = ("0" + month).slice(-2);
 var date = year.toString() + "-" + monthformatted + "-" + dayformatted;
 
 function setDate(){
+dayformatted = ("0" + day).slice(-2);
+monthformatted = ("0" + month).slice(-2);
 date = year.toString() + "-" + monthformatted + "-" + dayformatted;
 console.log(date);
 }
