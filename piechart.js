@@ -1,6 +1,6 @@
 const margin = { top: 40, bottom: 10, left: 120, right: 20 };
-var barwidth = 800;
-var barheight = 600;
+var barwidth = 600;
+var barheight = 300;
 let filteredDataPie = [];
 let date = "2021-07-25";
 
