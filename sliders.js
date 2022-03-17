@@ -18,10 +18,33 @@ var sliderStepDayMonth = d3
     .select('#slider-month')
     .append('svg')
     .attr('width', 500)
-    .attr('height', 100)
+    .attr('height', 50)
     .append('g')
-    .attr('transform', 'translate(30,30)');
+    .attr('transform', 'translate(30,10)');
 
   gStep.call(sliderStepDayMonth);
+
+
+
+  var sliderStepDayYear = d3
+  .sliderBottom()
+  .min(d3.min(datayear))
+  .max(d3.max(datayear))
+  .width(300)
+  .tickFormat(d3.format('1'))
+  .ticks(2)
+  .step(1)
+  .default(1)
+ ;
+
+var gStep = d3
+  .select('#slider-year')
+  .append('svg')
+  .attr('width', 500)
+  .attr('height', 50)
+  .append('g')
+  .attr('transform', 'translate(30,10)');
+
+gStep.call(sliderStepDayMonth);
 
  // d3.select('p#value-step').text(d3.format('.2%')(sliderStep.value()));
