@@ -28,7 +28,7 @@ d3.select("#countryeconomy").style("display", "block").text("Economy: " + d.prop
 
 barchart(d.properties.name);
 setTimeout(function(){
-	updatebar(filteredDataPie);
+	updatebar(filteredDataBar);
 },200);
 
 }

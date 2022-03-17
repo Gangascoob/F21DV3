@@ -34,7 +34,7 @@ function barchart(name){
 
 
 
-//let filteredDataPie = []
+let filteredDataBar = []
 d3.csv(piecsv, function(csv){
 data.push({location: csv.location, date: csv.date, vaccinated:
    + csv.people_vaccinated, 
@@ -44,11 +44,11 @@ data.push({location: csv.location, date: csv.date, vaccinated:
 filteredData = data.filter(function(d){return d.location == name && d.date == date});
 
 
-filteredDataPie = [{vacctype: "Booster", number: filteredData[0].booster}, {vacctype: "Fully Vaccinated", number: (filteredData[0].fullvaccinated - filteredData[0].booster)}, 
+filteredDataBar = [{vacctype: "Booster", number: filteredData[0].booster}, {vacctype: "Fully Vaccinated", number: (filteredData[0].fullvaccinated - filteredData[0].booster)}, 
 {vacctype: "Singly Vaccinated", number: (filteredData[0].vaccinated - filteredData[0].booster - filteredData[0].fullvaccinated)} ];
 
 //console.log(data[5].location);
-console.log(filteredDataPie);
+console.log(filteredDataBar);
 //console.log(filteredVaccNumbers);
 });
 };
