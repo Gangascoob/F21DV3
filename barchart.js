@@ -2,11 +2,17 @@ const margin = { top: 40, bottom: 10, left: 120, right: 20 };
 var barwidth = 800;
 var barheight = 300;
 
+
+//setting up date
 let day = 25;
 let month = 07;
 let year = 2021;
 
-let date = year.toString() + "-" + month.toString() + "-" + day.toString();
+dayformatted = ("0" + day).slice(-2);
+monthformatted = ("0" + month).slice(-2);
+
+
+let date = year.toString() + "-" + monthformatted + "-" + dayformatted;
 console.log(date);
 
 var svgbar = d3.select("#child_div3")
