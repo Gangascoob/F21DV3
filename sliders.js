@@ -15,7 +15,7 @@ var sliderStepDayMonth = d3
    ;
 
   var gStep = d3
-    .select('div#slider-step')
+    .select('#slider-month')
     .append('svg')
     .attr('width', 500)
     .attr('height', 100)
