@@ -4,15 +4,15 @@ var barheight = 300;
 
 
 //setting up date
-let day = 25;
-let month = 07;
-let year = 2021;
+var day = 25;
+var month = 07;
+var year = 2021;
 
 dayformatted = ("0" + day).slice(-2);
 monthformatted = ("0" + month).slice(-2);
 
 
-let date = year.toString() + "-" + monthformatted + "-" + dayformatted;
+var date = year.toString() + "-" + monthformatted + "-" + dayformatted;
 console.log(date);
 
 var svgbar = d3.select("#child_div3")
