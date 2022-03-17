@@ -32,7 +32,10 @@ d3.select("#countryincome").style("display", "block").text("Income bracket: " + 
 d3.select("#countryeconomy").style("display", "block").text("Economy: " + d.properties.economy); 
 
 piechart(d.properties.name);
-	
+setTimeout(function(){
+	piegenerator(filteredDataPie);
+},200);
+
 }
 //Create SVG
 var svg = d3.select("#child_div1")
