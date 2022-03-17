@@ -32,7 +32,7 @@ const g = svgbar.append("g").attr("transform", `translate(${margin.left},${margi
 
 
 const xscale = d3.scaleLinear().range([0, barwidth]);
-      const yscale = d3.scaleBand().rangeRound([0, barheight-50]).paddingInner(0.1);
+      const yscale = d3.scaleBand().rangeRound([0, barheight-40]).paddingInner(0.1);
       
       const xaxis = d3.axisTop().scale(xscale);
       const yaxis = d3.axisLeft().scale(yscale);
@@ -90,7 +90,7 @@ function updatebar(data){
                     (exit) => exit.remove()
                     );
       rect.transition()
-                  .attr("height", (yscale.bandwidth() - 20))
+                  .attr("height", (yscale.bandwidth() - 10))
           .attr("width", (d) => xscale(d.number))
           .attr("y", (d) => yscale(d.vacctype));
           
