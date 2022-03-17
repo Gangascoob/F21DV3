@@ -9,46 +9,36 @@ const svgpie = d3.select("#child_div3")
               .append("g") 
               .attr("transform","translate(" + xSizepie/2 + "," + ySizepie/2 + ")"); 
 const radius = Math.min(xSizepie, ySizepie) / 2; 
-var color = d3.scaleOrdinal(['#4daf4a','#377eb8','#ff7f00','#984ea3','#e41a1c']); 
+//var color = d3.scaleOrdinal(['#4daf4a','#377eb8','#ff7f00','#984ea3','#e41a1c']); 
 let piecsv = "https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/vaccinations/vaccinations-by-age-group.csv";
 
 	
 	
 function piechart(name){
 
+
+let date = "2021-02-25";
+     
 let piecsv = "https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/vaccinations/vaccinations.csv";
 		let data = []; //more data added
 let piedata = [];
 let filteredData = [];
 let filteredVaccNumbers = [];
 let sumVaccNumbers = 0;
-let tester = 0;
+let filteredDataPie = [];
+	
+	
 d3.csv(piecsv, function(csv){
 data.push({location: csv.location, date: csv.date, vaccinated:
 	   + csv.people_vaccinated, 
 	   fullvaccinated: + csv.people_fully_vaccinated,
 	   booster: + csv.total_boosters});			
-}).then(function(name, date){
+}).then(function(){
 filteredData = data.filter(function(d){return d.location == name && d.date == date});
-tester = filteredData;
-filteredVaccNumbers.push(filteredData.filter(function(d){return d.vaccinated}));
+filteredDataPie = [filteredData[0].booster, filteredData[0].fullvaccinated, filteredData[0].vaccinated];
 
-console.log(data[5].location);
-console.log(filteredData[1]);
-//console.log(filteredVaccNumbers);
-});
-
+});	
 	
-	
-	
-	
-	
-}	
-	
-	
-};	
-	
-function piechartcreate(data){ 
 // Generate the pie 
 var pie = d3.pie(); 
  
@@ -59,7 +49,7 @@ var arc = d3.arc()
  
 //Generate groups 
 var arcs = svgpie.selectAll("arc") 
-      .data(pie(data)) 
+      .data(pie(filteredDataPie)) 
       .enter() 
       .append("g") 
       .attr("class", "arc") 
@@ -67,7 +57,15 @@ var arcs = svgpie.selectAll("arc")
 //Draw arc paths 
 arcs.append("path") 
   .attr("fill", function(d, i) { 
-    return color(i); 
+    if(i == 0){
+	    return "blue";
+    }
+    if(i == 1){
+            return "red";    
+    }
+    if(i == 2){
+	    return "purple";
+    }
   }) 
   .attr("d", arc); 
 
