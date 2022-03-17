@@ -10,10 +10,12 @@ var year = 2021;
 
 dayformatted = ("0" + day).slice(-2);
 monthformatted = ("0" + month).slice(-2);
-
-
 var date = year.toString() + "-" + monthformatted + "-" + dayformatted;
+
+function setDate(){
+date = year.toString() + "-" + monthformatted + "-" + dayformatted;
 console.log(date);
+}
 
 var svgbar = d3.select("#child_div3")
       		.append("svg")

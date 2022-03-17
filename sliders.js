@@ -13,7 +13,8 @@ var sliderStepDayMonth = d3
     .step(1)
     .default(1)
     .on('onchange', val => {
-        month = val
+        month = val;
+        setDate();
         console.log(date);
     })
    ;
