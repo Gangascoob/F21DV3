@@ -1,7 +1,7 @@
 const margin = { top: 40, bottom: 10, left: 120, right: 20 };
 var barwidth = 800;
 var barheight = 300;
-
+var temp;
 
 //setting up date
 var day = 25;
@@ -17,7 +17,11 @@ dayformatted = ("0" + day).slice(-2);
 monthformatted = ("0" + month).slice(-2);
 date = year.toString() + "-" + monthformatted + "-" + dayformatted;
 console.log(date);
+barchart(temp);
+updatebar(filteredDataBar);
 }
+
+
 
 var svgbar = d3.select("#child_div3")
       		.append("svg")
@@ -42,7 +46,7 @@ function barchart(name){
 
       let piecsv = "https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/vaccinations/vaccinations.csv";
       let data = []; //more data added
-
+      temp = name;
 
 
 

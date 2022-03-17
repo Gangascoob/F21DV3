@@ -44,6 +44,7 @@ var sliderStepDayMonth = d3
     year = val;
     setDate();
     console.log(date);
+    
 })
  ;
 
