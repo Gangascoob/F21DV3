@@ -57,6 +57,23 @@ rect:hover {
 	box-shadow: 1px 1px 1px 2px rgb(217, 217, 217);
 	
 }
+
+#slidercontainer {
+	display: flex;
+	flex-wrap: wrap;
+	align-content: space-evenly;
+	gap: 10px 20px;
+	width: 96.5%;
+	height: 25vh;
+	margin-left: 10px;
+	margin-right: 25px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	padding: 20px;
+	background-color: white;
+	box-shadow: 1px 1px 1px 2px rgb(217, 217, 217);
+}
+
 #child_div1{
 	
 	vertical-align: top;
