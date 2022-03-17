@@ -22,12 +22,7 @@ function mouseClick(e, d){
 d3.select("#countryname").text(d.properties.name);
 d3.select("#countrypopulation").text("Population: " + d.properties.pop_est);
 					
-if(d.properties.lastcensus == "-99"){
-	d3.select("#countrycensus").style("display", "block").text("Census data unavailable");
-}
-else {		  
-	d3.select("#countrycensus").style("display", "block").text("Census data from:" + d.properties.lastcensus);
-};
+
 d3.select("#countryincome").style("display", "block").text("Income bracket: " + d.properties.income_grp);
 d3.select("#countryeconomy").style("display", "block").text("Economy: " + d.properties.economy); 
 

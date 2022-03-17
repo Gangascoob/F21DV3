@@ -9,7 +9,7 @@ var sliderStepDayMonth = d3
     .max(d3.max(datamonth))
     .width(300)
     .tickFormat(d3.format('1'))
-    .ticks(3)
+    .ticks(12)
     .step(1)
     .default(1)
    ;
