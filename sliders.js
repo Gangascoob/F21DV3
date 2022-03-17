@@ -18,9 +18,9 @@ var sliderStepDayMonth = d3
     .select('#slider-month')
     .append('svg')
     .attr('width', 500)
-    .attr('height', 30)
+    .attr('height', 40)
     .append('g')
-    .attr('transform', 'translate(30,10)');
+    .attr('transform', 'translate(30,30)');
 
   gStep.call(sliderStepDayMonth);
 
@@ -41,9 +41,9 @@ var gStep = d3
   .select('#slider-year')
   .append('svg')
   .attr('width', 500)
-  .attr('height', 30)
+  .attr('height', 40)
   .append('g')
-  .attr('transform', 'translate(30,10)');
+  .attr('transform', 'translate(30,30)');
 
 gStep.call(sliderStepDayMonth);
 
