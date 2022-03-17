@@ -1,5 +1,5 @@
 const margin = { top: 40, bottom: 10, left: 120, right: 20 };
-var barwidth = 600;
+var barwidth = 700;
 var barheight = 200;
 var temp;
 
@@ -90,7 +90,7 @@ function updatebar(data){
                     (exit) => exit.remove()
                     );
       rect.transition()
-                  .attr("height", yscale.bandwidth())
+                  .attr("height", (yscale.bandwidth() - 20))
           .attr("width", (d) => xscale(d.number))
           .attr("y", (d) => yscale(d.vacctype));
           
