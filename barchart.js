@@ -1,7 +1,7 @@
 const margin = { top: 40, bottom: 10, left: 120, right: 20 };
 var barwidth = 800;
 var barheight = 300;
-let filteredDataPie = [];
+
 let day = 25;
 let month = 07;
 let year = 2021;
@@ -33,8 +33,8 @@ function barchart(name){
       let data = []; //more data added
 
 
-
-let filteredDataBar = []
+let filteredData = [];
+let filteredDataBar = [];
 d3.csv(piecsv, function(csv){
 data.push({location: csv.location, date: csv.date, vaccinated:
    + csv.people_vaccinated, 
