@@ -7,7 +7,7 @@ var sliderStepDayMonth = d3
     .sliderBottom()
     .min(d3.min(datamonth))
     .max(d3.max(datamonth))
-    .width(300)
+    .width(250)
     .tickFormat(d3.format('1'))
     .ticks(12)
     .step(1)
@@ -20,7 +20,7 @@ var sliderStepDayMonth = d3
     .attr('width', 300)
     .attr('height', 100)
     .append('g')
-    .attr('transform', 'translate(30,30)');
+    .attr('transform', 'translate(10,30)');
 
   gStep.call(sliderStepDayMonth);
 
@@ -30,9 +30,9 @@ var sliderStepDayMonth = d3
   .sliderBottom()
   .min(d3.min(datayear))
   .max(d3.max(datayear))
-  .width(300)
+  .width(250)
   .tickFormat(d3.format('1'))
-  .ticks(2)
+  .ticks(1)
   .step(1)
   .default(1)
  ;
@@ -43,7 +43,7 @@ var gStep2 = d3
   .attr('width', 300)
   .attr('height', 100)
   .append('g')
-  .attr('transform', 'translate(30,30)');
+  .attr('transform', 'translate(10,30)');
 
 gStep2.call(sliderStepDayYear);
 
