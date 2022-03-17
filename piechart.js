@@ -1,119 +1,79 @@
-const xSizepie  = 200;   const ySizepie  = 200; 
+const margin = { top: 40, bottom: 10, left: 120, right: 20 };
+var barwidth = 800;
+var barheight = 600;
+
+var svgbar = d3.select("#child_div3")
+      		.append("svg")
+                  .attr("width", barwidth)
+                  .attr("height", barheight);
+
+const g = svgbar.append("g").attr("transform", `translate(${margin.left},${margin.top})`);
 
 
-// Append SVG Object to the Page 
-const svgpie = d3.select("#child_div3") 
-              .append("svg") 
-              .attr('width',  "100%"  ) 
-              .attr('height', "90%"  ) 
-              .append("g") 
-              .attr("transform","translate(" + xSizepie/2 + "," + ySizepie/2 + ")"); 
-const radius = Math.min(xSizepie, ySizepie) / 2; 
-//var color = d3.scaleOrdinal(['#4daf4a','#377eb8','#ff7f00','#984ea3','#e41a1c']); 
-
-
-
-let date = "2021-10-25";
-let filteredDataPie = [];	
-
-const xSizepie = 200;
-const ySizepie = 200;
-
-var datastart = [1, 1, 1];
-var pie = d3.pie(); 
- 
-// Generate the arcs 
-var arc = d3.arc() 
-      .innerRadius(0) 
-      .outerRadius(radius); 
+const xscale = d3.scaleLinear().range([0, barwidth]);
+      const yscale = d3.scaleBand().rangeRound([0, barheight]).paddingInner(0.1);
       
-var arcs = svgpie.selectAll("arc") 
-      .data(pie(datastart)) 
-      .enter() 
-      .append("path")
-      .attr("fill", function(d, i) { 
-    if(i == 0){
-	    return "blue";
-    }
-    if(i == 1){
-            return "red";    
-    }
-    if(i == 2){
-	    return "yellow";
-    }})
-    	.attr("d", arc)
-      .each(function(d){ this._current =d; });
-      
-      
-arcs.append("path") 
-  .attr("fill", function(d, i) { 
-    if(i == 0){
-	    return "blue";
-    }
-    if(i == 1){
-            return "red";    
-    }
-    if(i == 2){
-	    return "yellow";
-    }
-    
-  }) 
-  .attr("d", arc); 
+      const xaxis = d3.axisTop().scale(xscale);
+      const yaxis = d3.axisLeft().scale(yscale);
+      const g_xaxis = g.append("g").attr("class", "x axis");
+      const g_yaxis = g.append("g").attr("class", "y axis");
 
 
 
-function piechart(name){
+function barchart(name){
 
-          
-     let piecsv = "https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/vaccinations/vaccinations.csv";
+      let piecsv = "https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/vaccinations/vaccinations.csv";
       let data = []; //more data added
- 
-     
- d3.csv(piecsv, function(csv){
-             data.push({location: csv.location, date: csv.date, vaccinated:
-              + csv.people_vaccinated, 
-              fullvaccinated: + csv.people_fully_vaccinated,
-               booster: + csv.total_boosters});			
-            }).then(function filter(){
-                  filteredData = data.filter(function(d){return d.location == name && d.date == date});
-           
-            filteredDataPie = [filteredData[0].booster, (filteredData[0].fullvaccinated - filteredData[0].booster), (filteredData[0].vaccinated - filteredData[0].booster - filteredData[0].fullvaccinated) ];
-            
-            //console.log(data[5].location);
-            console.log(filteredDataPie);
-            //console.log(filteredVaccNumbers);
-            });
-     
-     
-     
-     
-};     
 
-function piegenerator(data){	
-      svgpie.selectAll("path")
-      .data(pie(data))
-      .transition()
-.attr("d", arc);
 
-svgpie.selectAll("path") 
-.data(pie(data)) 
-.enter() 
-.append("path")
-.attr("fill", function(d, i) { 
-if(i == 0){
-return "blue";
-}
-if(i == 1){
-return "red";    
-}
-if(i == 2){
-return "yellow";
-}})
-.attr("d", arc)
-.each(function(d){ this._current =d; });
 
-svgpie.selectAll("path")
-      .data(pie(data))
-.exit()
-.remove();
+//let filteredDataPie = []
+d3.csv(piecsv, function(csv){
+data.push({location: csv.location, date: csv.date, vaccinated:
+   + csv.people_vaccinated, 
+   fullvaccinated: + csv.people_fully_vaccinated,
+   booster: + csv.total_boosters});			
+}).then(function filter(){
+filteredData = data.filter(function(d){return d.location == name && d.date == date});
+
+
+filteredDataPie = [{vacctype: "Booster", number: filteredData[0].booster}, {vacctype: "Fully Vaccinated", number: (filteredData[0].fullvaccinated - filteredData[0].booster)}, 
+{vacctype: "Singly Vaccinated", number: (filteredData[0].vaccinated - filteredData[0].booster - filteredData[0].fullvaccinated)} ];
+
+//console.log(data[5].location);
+console.log(filteredDataPie);
+//console.log(filteredVaccNumbers);
+});
 };
+
+function updatebar(data){
+
+
+      xscale.domain([0, d3.max(data, (d) => d.number)]);
+      yscale.domain(data.map((d) => d.vacctype));
+      
+      g_xaxis.transition().call(xaxis);
+      g_yaxis.transition().call(yaxis);
+      
+      
+      const rect = g.selectAll("rect")
+                                                .data(data, (d) => d.vacctype)
+                    .join(
+                    (enter) => {
+                    const rect_enter = enter.append("rect").attr("x", 0);
+                    rect_enter.append("title");
+                    return rect_enter;
+                    },
+                    (updatebar) => updatebar,
+                    (exit) => exit.remove()
+                    );
+      rect.transition()
+                  .attr("height", yscale.bandwidth())
+          .attr("width", (d) => xscale(d.number))
+          .attr("y", (d) => yscale(d.vacctype));
+          
+      rect.select("title").text((d) => d.vacctype);
+      
+};
+      
+
