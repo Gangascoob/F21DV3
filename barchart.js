@@ -2,7 +2,11 @@ const margin = { top: 40, bottom: 10, left: 120, right: 20 };
 var barwidth = 800;
 var barheight = 300;
 let filteredDataPie = [];
-let date = "2021-07-25";
+let day = 25;
+let month = 07;
+let year = 2021;
+
+let date = year.toString() + "-" + month.toString() + "-" + day.toString();
 
 
 var svgbar = d3.select("#child_div3")
