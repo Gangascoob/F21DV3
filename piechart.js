@@ -23,10 +23,6 @@ if(name == csv.location && csv.date == "2021-07-23"){
 	data.push(csv.people_vaccinated_per_hundred);
 	console.log("yes");
 }
-	else{
-		console.log(name);
-		console.log(csv.location);}
-
 });
  
 // Generate the pie 
