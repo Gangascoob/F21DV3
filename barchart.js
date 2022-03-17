@@ -44,9 +44,9 @@ let filteredData = [];
 
 function barchart(name){
 
-      let piecsv = "https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/vaccinations/vaccinations.csv";
-      let data = []; //more data added
-      temp = name;
+let piecsv = "https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/vaccinations/vaccinations.csv";
+let data = []; //more data added
+temp = name;
 
 
 

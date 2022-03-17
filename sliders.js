@@ -16,6 +16,7 @@ var sliderStepDayMonth = d3
         month = val;
         setDate();
         console.log(date);
+        mapcolour(temp);
     })
    ;
 
@@ -85,4 +86,4 @@ var gStep3 = d3
 
 gStep3.call(sliderStepDayDay);
 
- // d3.select('p#value-step').text(d3.format('.2%')(sliderStep.value()));
+ 
