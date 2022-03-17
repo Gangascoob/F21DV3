@@ -20,7 +20,7 @@ function mapcolour(name){
     filteredDataMap2 = [filteredDataMap.value];
     
     //console.log(data[5].location);
-    console.log(filteredDataMap);
+    console.log(filteredDataMap2);
     //console.log(filteredVaccNumbers);
     });
     };
