@@ -8,6 +8,7 @@
 		
 		<script src="//d3js.org/d3.v7.min.js" charset="utf-8"></script>
 		<script src="//d3js.org/topojson.v1.min.js"></script>
+      <script src="https://unpkg.com/d3-simple-slider"></script>        //simple slider import
 		<link rel="stylesheet" href="style.css">
 	 <link rel="shortcut icon" href="#">
 		
@@ -43,6 +44,9 @@ Requirements: 1. 3 Different D3 layouts within a single dashboard
 <p id="countrycensus" class="countryinfotext"></p>
 <p id="countryincome" class="countryinfotext"></p>
 <p id="countryeconomy" class="countryinfotext"></p>
+<div id="slider-year"></div>
+<div id="slider-month"></div>
+<div id="slider-day"></div>
 </div>
 	
 <div id="child_div3">
@@ -61,6 +65,6 @@ Requirements: 1. 3 Different D3 layouts within a single dashboard
 	
 <script src="piechart.js"></script>
 <script src="app.js"></script>
-
+<script src="sliders.js"></script>
 </body>
 </html>
