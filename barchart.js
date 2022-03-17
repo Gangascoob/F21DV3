@@ -7,7 +7,7 @@ let month = 07;
 let year = 2021;
 
 let date = year.toString() + "-" + month.toString() + "-" + day.toString();
-
+console.log(date);
 
 var svgbar = d3.select("#child_div3")
       		.append("svg")
