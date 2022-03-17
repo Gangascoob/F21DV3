@@ -25,7 +25,7 @@ const xscale = d3.scaleLinear().range([0, barwidth]);
       const g_xaxis = g.append("g").attr("class", "x axis");
       const g_yaxis = g.append("g").attr("class", "y axis");
 
-
+let filteredDataBar = [];
 
 function barchart(name){
 
@@ -34,7 +34,7 @@ function barchart(name){
 
 
 let filteredData = [];
-let filteredDataBar = [];
+
 d3.csv(piecsv, function(csv){
 data.push({location: csv.location, date: csv.date, vaccinated:
    + csv.people_vaccinated, 
