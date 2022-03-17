@@ -1,7 +1,7 @@
 
 let filteredDataMap = [];
 let filteredDataMap2 = [];
-var myColor2 = d3.scaleSequential().domain([1, 2000]).interpolator(d3.interpolateViridis);
+var myColor2 = d3.scaleSequential().domain([1, 750]).interpolator(d3.interpolateViridis);
 
 
 function mapcolour(name){
@@ -26,7 +26,7 @@ function mapcolour(name){
         d3.selectAll(".country")
             .data(filteredDataMap2)
             .attr("fill", function(d){
-                return myColor2(d);
+                return myColor2(d[0]);
             });
 
     });
