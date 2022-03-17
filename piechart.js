@@ -17,7 +17,7 @@ function piechart(name){
 	
 var data = []; //more data added
 
-d3.csv("https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/vaccinations/vaccinations-by-age-group.csv").then (function(csv){
+d3.csv("https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/vaccinations/vaccinations-by-age-group.csv"), function(csv){
 
 if(name == csv.location && csv.date == "2021-07-23"){
 	data.push(csv.people_vaccinated_per_hundred);
