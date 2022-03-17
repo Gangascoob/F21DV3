@@ -32,7 +32,7 @@ const g = svgbar.append("g").attr("transform", `translate(${margin.left},${margi
 
 
 const xscale = d3.scaleLinear().range([0, barwidth]);
-      const yscale = d3.scaleBand().rangeRound([0, barheight]).paddingInner(0.1);
+      const yscale = d3.scaleBand().rangeRound([0, barheight-50]).paddingInner(0.1);
       
       const xaxis = d3.axisTop().scale(xscale);
       const yaxis = d3.axisLeft().scale(yscale);
