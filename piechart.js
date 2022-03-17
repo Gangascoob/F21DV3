@@ -72,7 +72,7 @@ arcs.append("path")
 
 //appends text to each arc of the chart and returns value. Centroid function calculates best position in the arc for text.
 var arctext = svgpie.selectAll("arc")
-	.data(pie(data))
+	.data(pie(filteredDataPie))
       .enter()
       .append("text")
       .text(function(d){
