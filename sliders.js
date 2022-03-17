@@ -40,6 +40,11 @@ var sliderStepDayMonth = d3
   .ticks(1)
   .step(1)
   .default(1)
+  .on('onchange', val => {
+    year = val;
+    setDate();
+    console.log(date);
+})
  ;
 
 var gStep2 = d3
@@ -62,6 +67,11 @@ var sliderStepDayDay = d3
   .ticks(8)
   .step(1)
   .default(1)
+  .on('onchange', val => {
+    day = val;
+    setDate();
+    console.log(date);
+})
  ;
 
 var gStep3 = d3
