@@ -17,7 +17,7 @@ var sliderStepDayMonth = d3
   var gStep = d3
     .select('#slider-month')
     .append('svg')
-    .attr('width', 300)
+    .attr('width', 320)
     .attr('height', 100)
     .append('g')
     .attr('transform', 'translate(10,30)');
@@ -40,11 +40,33 @@ var sliderStepDayMonth = d3
 var gStep2 = d3
   .select('#slider-year')
   .append('svg')
-  .attr('width', 300)
+  .attr('width', 320)
   .attr('height', 100)
   .append('g')
   .attr('transform', 'translate(10,30)');
 
 gStep2.call(sliderStepDayYear);
+
+
+var sliderStepDayDay = d3
+  .sliderBottom()
+  .min(d3.min(dataday))
+  .max(d3.max(dataday))
+  .width(250)
+  .tickFormat(d3.format('1'))
+  .ticks(1)
+  .step(1)
+  .default(1)
+ ;
+
+var gStep3 = d3
+  .select('#slider-day')
+  .append('svg')
+  .attr('width', 320)
+  .attr('height', 100)
+  .append('g')
+  .attr('transform', 'translate(10,30)');
+
+gStep3.call(sliderStepDayDay);
 
  // d3.select('p#value-step').text(d3.format('.2%')(sliderStep.value()));
