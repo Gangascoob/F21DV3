@@ -1,6 +1,6 @@
 const margin = { top: 40, bottom: 10, left: 120, right: 20 };
 var barwidth = 800;
-var barheight = 300;
+var barheight = 250;
 var temp;
 
 //setting up date
