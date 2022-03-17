@@ -23,7 +23,7 @@ function mapcolour(name){
     //console.log(data[5].location);
     console.log(filteredDataMap2);
     //console.log(filteredVaccNumbers);
-        d3.selectAll("country")
+        d3.selectAll(".country")
             .data(filteredDataMap2)
             .attr("fill", function(d){
                 return myColor2(d);
