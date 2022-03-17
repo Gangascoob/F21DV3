@@ -74,6 +74,51 @@ rect:hover {
 	box-shadow: 1px 1px 1px 2px rgb(217, 217, 217);
 }
 
+#sliderchild1{
+	
+	vertical-align: top;
+	width: 25%;
+	height: 90%;
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-top: 20px;
+	padding: 5px;
+	background-color: white;
+	box-shadow: 1px 1px 1px 2px rgb(217, 217, 217);
+	border: 3px black;
+	text-align: center;
+}
+
+#sliderchild2{
+	
+	vertical-align: top;
+	width: 25%;
+	height: 90%;
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-top: 20px;
+	padding: 5px;
+	background-color: white;
+	box-shadow: 1px 1px 1px 2px rgb(217, 217, 217);
+	border: 3px black;
+	text-align: center;
+}
+
+#sliderchild3{
+	
+	vertical-align: top;
+	width: 25%;
+	height: 90%;
+	margin-left: 0px;
+	margin-right: 0px;
+	margin-top: 20px;
+	padding: 5px;
+	background-color: white;
+	box-shadow: 1px 1px 1px 2px rgb(217, 217, 217);
+	border: 3px black;
+	text-align: center;
+}
+
 #child_div1{
 	
 	vertical-align: top;
