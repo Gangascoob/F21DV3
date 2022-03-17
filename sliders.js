@@ -37,7 +37,7 @@ var sliderStepDayMonth = d3
   .default(1)
  ;
 
-var gStep = d3
+var gStep2 = d3
   .select('#slider-year')
   .append('svg')
   .attr('width', 200)
@@ -45,6 +45,6 @@ var gStep = d3
   .append('g')
   .attr('transform', 'translate(30,30)');
 
-gStep.call(sliderStepDayMonth);
+gStep2.call(sliderStepDayYear);
 
  // d3.select('p#value-step').text(d3.format('.2%')(sliderStep.value()));
