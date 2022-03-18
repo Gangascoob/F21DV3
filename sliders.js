@@ -45,7 +45,7 @@ var sliderStepDayMonth = d3
     year = val;
     setDate();
     console.log(date);
-    
+    mapcolour(temp, iso);
 })
  ;
 
@@ -73,6 +73,7 @@ var sliderStepDayDay = d3
     day = val;
     setDate();
     console.log(date);
+    mapcolour(temp, iso);
 })
  ;
 

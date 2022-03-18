@@ -20,24 +20,16 @@ function mapcolour(name, iso){
     console.log(filteredDataMap);
     filteredDataMap2 = [{value: parseInt(filteredDataMap[0].value, 10), location: filteredDataMap[0].location}];
     
-    //console.log(data[5].location);
-    
     d3.selectAll("#"+iso).transition().attr("fill", function(d){
         return myColor2(filteredDataMap2[0].value);
-    }
-    )});
+    });
+
+    d3.select("#hospitaladmissions").style("display","block").text("Daily hospital occupancy per million:" + filteredDataMap2[0].value);
+    d3.select("#showdate").style("display","block").text("Date:" + date);
+
+    });
+    
+
 }
 
 
-/*
-    mapelements.transition()
-                .attr("fill", function(d){
-                    if("#id" == "#" +name){
-                    return myColor2(filteredDataMap2[0].value);
-                    }
-                    else return "rgba(8, 81, 156, 0.6)";
-                });
-            
-
-    });
-    }; */
