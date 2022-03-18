@@ -17,7 +17,7 @@ function mapcolour(name){
     }).then(function filter(){
     filteredDataMap = datamap.filter(function(d){return d.date == date && d.indicator == "Daily hospital occupancy per million"});
     
-    
+    console.log(filteredDataMap);
     filteredDataMap2 = [{value: parseInt(filteredDataMap.value, 10), location: filteredDataMap.location}];
     
     //console.log(data[5].location);
