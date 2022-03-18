@@ -57,7 +57,7 @@ mapelements = svg.selectAll("path")
            else return "rgba(8, 81, 156, 0.6)";
            })
            .attr("id", function(d, i){
-           return "country" + d.properties.name;
+           return d.properties.name;
            })
            .attr("class", "country")
 	   .on("click", mouseClick);
