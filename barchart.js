@@ -39,9 +39,10 @@ const g = svgbar.append("g").attr("transform", `translate(${margin.left},${margi
 
 //scale constants for barchart.
 //.scaleBand sets width for each entry to barchart evenly spread.
-//.rangeRound
+//.rangeRound sets the range of the scale.
+//paddingInner is just for some extra spacing between bars.
 const xscale = d3.scaleLinear().range([0, barwidth]);
-const yscale = d3.scaleBand().paddingInner(0.1);
+const yscale = d3.scaleBand().rangeRound([0, barheight-40]).paddingInner(0.1);
       
 const xaxis = d3.axisTop().scale(xscale);
 const yaxis = d3.axisLeft().scale(yscale);
