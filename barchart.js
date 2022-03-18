@@ -1,49 +1,57 @@
+
+//various variables
 const margin = { top: 40, bottom: 10, left: 120, right: 20 };
 var barwidth = 700;
 var barheight = 200;
 var temp;
 
 
-//setting up date
+//Initialising date - kind of central date chosen as starting point, but can be changed with sliders.
+
 var day = 25;
 var month = 07;
 var year = 2021;
 
+//This ensures all day/month values are exactly 2 digits long (e.g. 07, 15, 31) and in string format.
 var dayformatted = ("0" + day).slice(-2);
 var monthformatted = ("0" + month).slice(-2);
 var date = year.toString() + "-" + monthformatted + "-" + dayformatted;
 
+//Used to update barchart data whenever date is changed via slider.
 function setDate(){
 dayformatted = ("0" + day).slice(-2);
 monthformatted = ("0" + month).slice(-2);
 date = year.toString() + "-" + monthformatted + "-" + dayformatted;
-console.log(date);
+//console.log(date);
 barchart(temp);
 updatebar(filteredDataBar);
 }
 
 
-
+//create svg for barchart.
 var svgbar = d3.select("#child_div3")
       		.append("svg")
                   .attr("width", barwidth)
                   .attr("height", barheight);
 
+//keeps barchart within specified margins.                 
 const g = svgbar.append("g").attr("transform", `translate(${margin.left},${margin.top})`);
 
-
+//scale constants for barchart.
+//.scaleBand sets width for each entry to barchart evenly spread.
+//.rangeRound
 const xscale = d3.scaleLinear().range([0, barwidth]);
-      const yscale = d3.scaleBand().rangeRound([0, barheight-40]).paddingInner(0.1);
+const yscale = d3.scaleBand().paddingInner(0.1);
       
-      const xaxis = d3.axisTop().scale(xscale);
-      const yaxis = d3.axisLeft().scale(yscale);
-      const g_xaxis = g.append("g").attr("class", "x axis");
-      const g_yaxis = g.append("g").attr("class", "y axis");
+const xaxis = d3.axisTop().scale(xscale);
+const yaxis = d3.axisLeft().scale(yscale);
+const g_xaxis = g.append("g").attr("class", "x axis");
+const g_yaxis = g.append("g").attr("class", "y axis");
 
 let filteredDataBar = [];
 let filteredData = [];
 
-function barchart(name, isoin){
+function barchart(name){
 
 let piecsv = "https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/vaccinations/vaccinations.csv";
 let data = []; //more data added
