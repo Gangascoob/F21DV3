@@ -9,7 +9,7 @@ function mapcolour(name){
     let csvmap = "https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/hospitalizations/covid-hospitalizations.csv";
     let datamap = []; 
     
-    
+    console.log("#"+ name);
     
     
     d3.csv(csvmap, function(csv){
