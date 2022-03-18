@@ -56,7 +56,7 @@ d3.json("https://raw.githubusercontent.com/markuslerner/travelscope/master/publi
            else return "rgba(8, 81, 156, 0.6)";
            })
            .attr("id", function(d, i){
-           return "country" + d.properties.iso_a3;
+           return "country" + d.properties.name;
            })
            .attr("class", "country")
 	   .on("click", mouseClick);
