@@ -22,6 +22,14 @@ function mapcolour(name){
     
     //console.log(data[5].location);
     
+    d3.selectAll("#"+name).transition().attr("fill", function(d){
+        return myColor2(filteredDataMap2[0].value);
+    }
+    )});
+}
+
+
+/*
     mapelements.transition()
                 .attr("fill", function(d){
                     if("#id" == "#" +name){
@@ -32,4 +40,4 @@ function mapcolour(name){
             
 
     });
-    };
+    }; */
