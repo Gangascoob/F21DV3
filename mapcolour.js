@@ -4,12 +4,12 @@ let filteredDataMap2 = [];
 var myColor2 = d3.scaleSequential().domain([1, 750]).interpolator(d3.interpolateViridis);
 
 
-function mapcolour(name){
+function mapcolour(name, iso){
 
     let csvmap = "https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/hospitalizations/covid-hospitalizations.csv";
     let datamap = []; 
     
-    console.log("#"+ name);
+    console.log("#"+ iso);
     
     
     d3.csv(csvmap, function(csv){
@@ -22,7 +22,7 @@ function mapcolour(name){
     
     //console.log(data[5].location);
     
-    d3.selectAll("#"+name).transition().attr("fill", function(d){
+    d3.selectAll("#"+iso).transition().attr("fill", function(d){
         return myColor2(filteredDataMap2[0].value);
     }
     )});

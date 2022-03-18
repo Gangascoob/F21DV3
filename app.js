@@ -27,7 +27,7 @@ d3.select("#countrypopulation").text("Population: " + d.properties.pop_est);
 d3.select("#countryincome").style("display", "block").text("Income bracket: " + d.properties.income_grp);
 d3.select("#countryeconomy").style("display", "block").text("Economy: " + d.properties.economy); 
 
-barchart(d.properties.name);
+barchart(d.properties.name, d.properties.iso_a3);
 setTimeout(function(){
 	updatebar(filteredDataBar);
 },200);
@@ -57,7 +57,7 @@ mapelements = svg.selectAll("path")
            else return "rgba(8, 81, 156, 0.6)";
            })
            .attr("id", function(d, i){
-           return d.properties.name;
+           return d.properties.iso_a3;
            })
            .attr("class", "country")
 	   .on("click", mouseClick);
