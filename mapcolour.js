@@ -25,7 +25,7 @@ function mapcolour(name){
     //console.log(filteredVaccNumbers);
         d3.selectAll("#country" + name)
             .attr("fill", "red");
-            });
+            
 
     });
     };
