@@ -52,16 +52,21 @@ const g_yaxis = g.append("g").attr("class", "y axis");
 let filteredDataBar = [];
 let filteredData = [];
 
+
+//Main function for producing bar charts.
 function barchart(name){
 
-let piecsv = "https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/vaccinations/vaccinations.csv";
+let barcsv = "https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/vaccinations/vaccinations.csv";
 let data = []; //more data added
 temp = name;
-console.log(iso);
-console.log(temp);
+//console.log(iso);
+//console.log(temp);
 
-
-d3.csv(piecsv, function(csv){
+//Pushes specific attributes of the csv into data[] so it can be filtered.
+//Data is then filtered to only return the row with the matching name and dates.
+//Since this is only ever an array of length 1, we can target it easily to select only the data we want for the graph
+//and rearrange it into a better format for graphing use. 
+d3.csv(barcsv, function(csv){
 data.push({location: csv.location, date: csv.date, vaccinated:
    + csv.people_vaccinated, 
    fullvaccinated: + csv.people_fully_vaccinated,
@@ -74,11 +79,14 @@ filteredDataBar = [{vacctype: "Booster", number: filteredData[0].booster}, {vacc
 {vacctype: "Singly Vaccinated", number: (filteredData[0].vaccinated - filteredData[0].booster - filteredData[0].fullvaccinated)} ];
 
 //console.log(data[5].location);
-console.log(filteredDataBar);
+//console.log(filteredDataBar);
 //console.log(filteredVaccNumbers);
 });
 };
 
+
+//Function for updating the bars.
+//
 function updatebar(data){
 
 
