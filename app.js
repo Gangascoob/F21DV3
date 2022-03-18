@@ -43,7 +43,7 @@ d3.json("https://raw.githubusercontent.com/markuslerner/travelscope/master/publi
 
 				
 	//Bind data and create one path per GeoJSON feature
-	svg.selectAll("path")
+var mapelements = svg.selectAll("path")
 	   .data(json.features)
 	   .enter()
 	   .append("path")
