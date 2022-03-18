@@ -24,7 +24,7 @@ function mapcolour(name){
     console.log(filteredDataMap2);
     mapelements.transition()
                 .attr("fill", function(d){
-                    return "red";
+                    return myColor2(filteredDataMap2[0]);
                 });
             
 
