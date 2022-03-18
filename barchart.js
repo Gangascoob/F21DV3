@@ -2,7 +2,7 @@ const margin = { top: 40, bottom: 10, left: 120, right: 20 };
 var barwidth = 700;
 var barheight = 200;
 var temp;
-var iso;
+
 
 //setting up date
 var day = 25;
@@ -48,9 +48,9 @@ function barchart(name, isoin){
 let piecsv = "https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/vaccinations/vaccinations.csv";
 let data = []; //more data added
 temp = name;
-iso = isoin;
+console.log(iso);
 console.log(temp);
-console.log(isoin);
+
 
 d3.csv(piecsv, function(csv){
 data.push({location: csv.location, date: csv.date, vaccinated:

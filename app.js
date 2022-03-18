@@ -1,5 +1,6 @@
 const selectedCountries = ["GBR", "ITA", "DEU", "NOR", "RUS", "LTU", "HUN"];
 var mapelements;
+var iso;
 
 			//Width and height
 			var w = 800;
@@ -8,10 +9,10 @@ var mapelements;
 			//Define map projection
 
 
-			var projection = d3.geoMercator() //utiliser une projection standard pour aplatir les pôles, voir D3 projection plugin
-								   .center([ -50, 65 ]) //comment centrer la carte, longitude, latitude
-								   .translate([ 0, 0 ]) // centrer l'image obtenue dans le svg
-								   .scale([350]); // zoom, plus la valeur est petit plus le zoom est gros 
+			var projection = d3.geoMercator() 
+								   .center([ -50, 65 ]) 
+								   .translate([ 0, 0 ]) 
+								   .scale([350]); 
 
 			//Define path generator
 			var path = d3.geoPath()
@@ -23,7 +24,7 @@ function mouseClick(e, d){
 d3.select("#countryname").text(d.properties.name);
 d3.select("#countrypopulation").text("Population: " + d.properties.pop_est);
 					
-
+iso = d.properties.iso_a3;
 d3.select("#countryincome").style("display", "block").text("Income bracket: " + d.properties.income_grp);
 d3.select("#countryeconomy").style("display", "block").text("Economy: " + d.properties.economy); 
 
