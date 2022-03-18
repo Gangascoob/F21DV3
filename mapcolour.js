@@ -15,16 +15,16 @@ function mapcolour(name){
     d3.csv(csvmap, function(csv){
     datamap.push({location: csv.entity, date: csv.date, indicator: csv.indicator, value: csv.value});			
     }).then(function filter(){
-    filteredDataMap = datamap.filter(function(d){return d.location == name && d.date == date && d.indicator == "Daily hospital occupancy per million"});
+    filteredDataMap = datamap.filter(function(d){return d.date == date && d.indicator == "Daily hospital occupancy per million"});
     
     
-    filteredDataMap2 = [parseInt(filteredDataMap[0].value, 10)];
+    filteredDataMap2 = [{value: parseInt(filteredDataMap.value, 10), location: filteredDataMap.location}];
     
     //console.log(data[5].location);
     console.log(filteredDataMap2);
     mapelements.transition()
                 .attr("fill", function(d){
-                    return myColor2(filteredDataMap2[0]);
+                    return myColor2(filteredDataMap2.value);
                 });
             
 
