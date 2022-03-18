@@ -26,7 +26,7 @@ function mapcolour(name){
         d3.selectAll(".country")
             .data(filteredDataMap2)
             .attr("fill", function(d){
-                return myColor2(d[0]);
+                return myColor2(filteredDataMap2[0]);
             });
 
     });
