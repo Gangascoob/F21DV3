@@ -86,7 +86,7 @@ filteredDataBar = [{vacctype: "Booster", number: filteredData[0].booster}, {vacc
 
 
 //Function for updating the bars.
-//
+
 function updatebar(data){
 
 

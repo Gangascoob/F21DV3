@@ -2,7 +2,12 @@ let dataday = [01, 02, 03, 04, 05, 06, 07, 08, 09, 10, 11, 12, 13, 14, 15, 16, 1
 let datamonth = [01, 02, 03, 04, 05, 06, 07, 08, 09, 10, 11, 12];
 let datayear = [2021, 2022];
 
+//Slider base provided by "https://unpkg.com/d3-simple-slider"
 
+
+//creates a slider with min and max values, a specified value of 'ticks' (number of visible points on slider), 
+//and the size of step.
+//Whenever slider changes, appropriate day/month/year value is changed to match and setDate() and mapcolour() are both called.
 var sliderStepDayMonth = d3
     .sliderBottom()
     .min(d3.min(datamonth))
