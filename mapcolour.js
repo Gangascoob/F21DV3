@@ -24,7 +24,10 @@ function mapcolour(name){
     
     mapelements.transition()
                 .attr("fill", function(d){
+                    if("id" == ("#country" + name)){
                     return myColor2(filteredDataMap2[0].value);
+                    }
+                    else return "rgba(8, 81, 156, 0.6)";
                 });
             
 
