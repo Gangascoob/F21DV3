@@ -90,16 +90,16 @@ filteredDataBar = [{vacctype: "Booster", number: filteredData[0].booster}, {vacc
 function updatebar(data){
 
 
-      xscale.domain([0, d3.max(data, (d) => d.number)]);
-      yscale.domain(data.map((d) => d.vacctype));
+      xscale.domain([0, d3.max(data, function(d){return d.number} )]);
+      yscale.domain(data.map(function(d){return d.vacctype}));
       
       g_xaxis.transition().call(xaxis);
       g_yaxis.transition().call(yaxis);
       
       
       const rect = g.selectAll("rect")
-                                                .data(data, (d) => d.vacctype)
-                    .join(
+                  .data(data, (d) => d.vacctype)
+                  .join(
                     (enter) => {
                     const rect_enter = enter.append("rect").attr("x", 0);
                     rect_enter.append("title");
