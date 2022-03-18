@@ -50,7 +50,7 @@ let data = []; //more data added
 temp = name;
 iso = isoin;
 console.log(temp);
-console.log(iso);
+console.log(isoin);
 
 d3.csv(piecsv, function(csv){
 data.push({location: csv.location, date: csv.date, vaccinated:
