@@ -49,7 +49,7 @@ let piecsv = "https://raw.githubusercontent.com/owid/covid-19-data/master/public
 let data = []; //more data added
 temp = name;
 iso = isoin;
-
+console.log(iso);
 
 d3.csv(piecsv, function(csv){
 data.push({location: csv.location, date: csv.date, vaccinated:
