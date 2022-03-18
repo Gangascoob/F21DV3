@@ -21,7 +21,9 @@ function mapcolour(name){
     filteredDataMap2 = [{value: parseInt(filteredDataMap.value, 10), location: filteredDataMap.location}];
     
     //console.log(data[5].location);
-    console.log(filteredDataMap2);
+    console.log(filteredDataMap.value);
+    console.log(filteredDataMap.location);
+    console.log(filteredDataMap2.value);
     mapelements.transition()
                 .attr("fill", function(d){
                     return myColor2(filteredDataMap2.value);
