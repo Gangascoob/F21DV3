@@ -98,7 +98,7 @@ function updatebar(data){
       
       
       const rect = g.selectAll("rect")
-                  .data(data, function(d){return d.vacctype})
+                  .data(data, function(d){return d.vacctype;})
                   .join(function(enter){
                     
                     const rect_enter = enter.append("rect").attr("x", 0);
@@ -106,14 +106,16 @@ function updatebar(data){
                     return rect_enter;
                     },
                     (updatebar) => updatebar,
-                    function(exit){ exit.remove();}
+                    function(exit){
+                           exit.remove();
+                        }
                     );
       rect.transition()
                   .attr("height", (yscale.bandwidth() - 10))
-          .attr("width", (d) => xscale(d.number))
-          .attr("y", (d) => yscale(d.vacctype));
+          .attr("width", function(d){ return xscale(d.number);})
+          .attr("y", function(d){ return yscale(d.vacctype);});
           
-      rect.select("title").text((d) => d.vacctype);
+      rect.select("title").text(function(d){return d.vacctype});
       
 };
       
