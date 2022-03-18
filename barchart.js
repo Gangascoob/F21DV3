@@ -98,15 +98,15 @@ function updatebar(data){
       
       
       const rect = g.selectAll("rect")
-                  .data(data, (d) => d.vacctype)
-                  .join(
-                    (enter) => {
+                  .data(data, function(d){return d.vacctype})
+                  .join(function(enter){
+                    
                     const rect_enter = enter.append("rect").attr("x", 0);
                     rect_enter.append("title");
                     return rect_enter;
                     },
                     (updatebar) => updatebar,
-                    (exit) => exit.remove()
+                    function(exit){ exit.remove();}
                     );
       rect.transition()
                   .attr("height", (yscale.bandwidth() - 10))
